@@ -12,7 +12,7 @@ remote_file_path="/app/backend/"
 # SSH connection options
 SSH_OPTIONS = "-o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null"
 
-ec2_client = boto3.client('ec2')
+ec2_client = boto3.client('ec2', region_name='ap-south-1')
 
 # Get the public IP address of the EC2 instance
 response = ec2_client.describe_instances(InstanceIds=[EC2_INSTANCE])
